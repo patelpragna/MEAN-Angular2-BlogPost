@@ -1,0 +1,28 @@
+<button class="btn btn-outline-danger" (click)="showComment()">
+    <i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comment
+</button>
+<br>
+<br>
+<h4>Comments:</h4>
+<div *ngIf="displayComment">
+    
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let c of post.comment">
+            <!-- <label class="text text-info font-weight-bold">{{c.commentBy}}</label> -->
+            <label class="badge badge-info">{{c.commentBy}}</label>&nbsp;&nbsp;
+            <p class="text text-secondary">{{c.text}}</p>
+        </li>
+    </ul>
+    <div class="card">
+        <div class="card-header">Add Comment</div>
+        <div class="card-body">
+            <form name="commentForm">
+                <div class="form-group">
+                    <textarea class="form-control" name="description" id="comment" placeholder="comment" [(ngModel)]="newComment.text"></textarea>
+                    <br>
+                    <button class="btn btn-danger" (click)="addComment()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

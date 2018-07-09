@@ -1,0 +1,16 @@
+<div class="card border-secondary" style="margin-top:30px" *ngFor="let post of allPost">
+  <div class="card-body">
+    <span class="card-title display-4">{{post.title}}</span>
+    <hr>
+    <p class="card-text">{{post.description}}</p>
+    <app-like [post] = "post"></app-like>
+    <!-- <app-view></app-view> -->
+    <app-comment [post]="post"></app-comment>
+    <!-- <app-view></app-view> -->
+  </div>
+  <div class="card-footer">
+    <i class="fa fa-user fa-lg" aria-hidden="true"></i> by
+    <span class="font-weight-bold font-italic text text-secondary">{{post.postedBy}}</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <app-date-pipe></app-date-pipe>
+  </div>
+</div>

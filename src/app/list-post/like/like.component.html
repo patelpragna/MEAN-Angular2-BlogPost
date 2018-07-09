@@ -1,0 +1,9 @@
+<ng-template #tipContent><span *ngFor="let l of post.likes">{{l}}<br></span></ng-template>
+
+<h5><span class="badge badge badge-light"  placement="right" [ngbTooltip]="tipContent">Likes: {{post.likes.length}}</span></h5>
+<button class="btn btn-outline-info" (click)="addLike()" *ngIf="!post.likes.includes(checkUser)">
+    <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>&nbsp; Like
+</button>
+<button class="btn btn-info" (click)="dislike()" *ngIf="post.likes.includes(checkUser)">
+    <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>&nbsp; Dislike
+</button>

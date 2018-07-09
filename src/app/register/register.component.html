@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-8" style="margin:50px auto">
+      <div class="card bg-light border-secondary">
+          <div class="card-header bg-dark">
+              <h1 class="text-light display-4">REGISTER</h1>
+          </div>
+          <div class="card-body">
+              <form name="registerForm">
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="registerUser">Username</label>
+                          <input type="text" class="form-control" name="username" id="registerUser" placeholder="Username" [(ngModel)]="newUser.username">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="registerPswd">Password</label>
+                          <input type="password" class="form-control" name="password" id="registerPswd" placeholder="Password" [(ngModel)]="newUser.password">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-4">
+                          <label for="registerfname">Firstname</label>
+                          <input type="text" class="form-control" name="firstname" id="registerfname" placeholder="Firstname" [(ngModel)]="newUser.firstname">
+                      </div>
+                      <div class="form-group col-md-4">
+                          <label for="registerlname">Lastname</label>
+                          <input type="text" class="form-control" name="lastname" id="registerlname" placeholder="Lastname" [(ngModel)]="newUser.lastname">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" class="form-control" name="email" id="registerEmail" [(ngModel)]="newUser.email">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success" (click)="registerNewUser()">Register</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
